@@ -2,7 +2,12 @@
 
 short CountBits(unsigned int x) {
   // TODO - you fill in here.
-  return 0;
+	short num_bits = 0;
+	while (x) {
+		num_bits += x & 1;
+		x >>= 1;
+	}
+  return num_bits;
 }
 
 int main(int argc, char* argv[]) {
