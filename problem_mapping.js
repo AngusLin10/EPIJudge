@@ -2,7 +2,7 @@ problem_mapping = {
     "Chapter 04: Primitive Types": {
         "4.00 Bootcamp: Primitive Types": {
             "C++: count_bits.cc": {
-                "passed": 0,
+                "passed": 10001,
                 "total": 10001
             },
             "Java: CountBits.java": {
@@ -16,7 +16,7 @@ problem_mapping = {
         },
         "4.01 Computing the parity of a word": {
             "C++: parity.cc": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             },
             "Java: Parity.java": {
@@ -65,7 +65,7 @@ problem_mapping = {
                 "passed": 0,
                 "total": 10000
             },
-            "Python: closest_int_same_weight.py": { 
+            "Python: closest_int_same_weight.py": {
                 "passed": 0,
                 "total": 10000
             }
