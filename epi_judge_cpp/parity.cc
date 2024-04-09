@@ -2,7 +2,7 @@
 
 // reference: https://www.geeksforgeeks.org/finding-the-parity-of-a-number-efficiently/
 
-// Method 1
+// Method 1 O(k) For example, for 10001010, k = 3.
 short Parity(unsigned long long x) {
     short result = 0;
     while (x > 0) {
@@ -12,7 +12,7 @@ short Parity(unsigned long long x) {
     return result;
 }
 
-// Method 2
+// Method 2 O(log(n)), where n is the word size.
 short Parity2(unsigned long long x) {
     x ^= x >> 32;
     x ^= x >> 16;
@@ -25,11 +25,11 @@ short Parity2(unsigned long long x) {
 
     /*
     example:
-        n = 1000 0101
-        n = n ^ (n >> 4) = 1000 ^ 0101 = 1101
-        n = n ^ (n >> 2) = 11 ^ 01 = 10
-        n = n ^ (n >> 1) = 1 ^ 0 = 1
-        Final result = n & 1 = 1
+        x = 1000 0101
+        x = x ^ (x >> 4) = 1000 ^ 0101 = 1101
+        x = x ^ (x >> 2) = 11 ^ 01 = 10
+        x = x ^ (x >> 1) = 1 ^ 0 = 1
+        Final result = x & 1 = 1
     */
 }
 
