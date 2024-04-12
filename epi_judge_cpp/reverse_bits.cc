@@ -1,29 +1,26 @@
 #include "test_framework/generic_test.h"
-unsigned long long ReverseBits(unsigned long long x) {                      //    .... 00000000 abcdefgh 
-    x = ((x >> 1) & 0x5555555555555555) | ((x & 0x5555555555555555) << 1);  // => .... 00000000 badcfehg
-    x = ((x >> 2) & 0x3333333333333333) | ((x & 0x3333333333333333) << 2);  // => .... 00000000 dcbahgfe
-    x = ((x >> 4) & 0x0f0f0f0f0f0f0f0f) | ((x & 0x0f0f0f0f0f0f0f0f) << 4);  // => .... 00000000 hgfedcba
-    x = ((x >> 8) & 0x00ff00ff00ff00ff) | ((x & 0x00ff00ff00ff00ff) << 8);  // => abcdefgh 00000000 .... 
-    x = ((x >> 16) & 0x0000ffff0000ffff) | ((x & 0x0000ffff0000ffff) << 16);
-    x = (x >> 32) | (x << 32);
-    return x;
-}
+unsigned long long ReverseBits(unsigned long long x) {
+    unsigned long long rev = 0;
+    // Iterate through bits from the lowest to the highest
+    for (int i = 0; i < sizeof(x) * 8; ++i) {
+        // Left shift the reversed result by 1 to prepare for the next bit reversal
+        rev <<= 1;
 
-unsigned long long ReverseBits2(unsigned long long x) {
-    unsigned long long r = 0;
-    int i = 63;
-    while (x >>= 1) {
-        r = (r << 1) | (x & 1);
-        --i;
+        // If the lowest bit of the input number x is 1, set the lowest bit of the reversed result to 1
+        if (x & 1)
+            rev |= 1;
+
+        // Right shift the input number x to prepare the next bit as the lowest bit
+        x >>= 1;
     }
-    return r << i;
+    return rev;
 }
 
 int main(int argc, char* argv[]) {
   std::vector<std::string> args{argv + 1, argv + argc};
   std::vector<std::string> param_names{"x"};
-  ReverseBits2(5);
+  ReverseBits(3);
   return GenericTestMain(args, "reverse_bits.cc", "reverse_bits.tsv",
-                         &ReverseBits2, DefaultComparator{}, param_names);
+                         &ReverseBits, DefaultComparator{}, param_names);
 
 }
