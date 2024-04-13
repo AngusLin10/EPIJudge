@@ -30,7 +30,7 @@ problem_mapping = {
         },
         "4.02 Swap bits": {
             "C++: swap_bits.cc": {
-                "passed": 9,
+                "passed": 10001,
                 "total": 10001
             },
             "Java: SwapBits.java": {
@@ -58,7 +58,7 @@ problem_mapping = {
         },
         "4.04 Find a closest integer with the same weight": {
             "C++: closest_int_same_weight.cc": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             },
             "Java: ClosestIntSameWeight.java": {
