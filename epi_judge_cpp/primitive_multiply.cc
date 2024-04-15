@@ -1,20 +1,23 @@
 #include "test_framework/generic_test.h"
-// O(n)
 unsigned long long Add(unsigned long long x, unsigned long long y) {
+    unsigned long long carry = 0;
+    unsigned long long sum = 0;
     while (x) {
-        unsigned long long carry = x & y;
-        y = x ^ y;
-        x = carry << 1;
+        sum = x ^ y;
+        carry = (x & y) << 1;
+        y = sum;
+        x = carry;
     }
     return y;
 }
 
+// O(n^2)
 unsigned long long Multiply(unsigned long long x, unsigned long long y) {
     unsigned long long sum = 0;
     while (x) {
         // Examines each bit of x.
         if (x & 1) {
-            sum = Add(sum, y);
+            sum = Add(sum, y);  // O(n)
         }
         x >>= 1, y <<= 1;
     }
