@@ -10,7 +10,7 @@ int Divide(int x, int y) {
     }
     x -= shiftedDivisor;
     quotient += 1 << powerOfTwo;
-  })
+  }
   return quotient;
 }
 

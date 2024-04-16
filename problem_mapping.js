@@ -86,7 +86,7 @@ problem_mapping = {
         },
         "4.06 Compute quotient without arithmetical operators": {
             "C++: primitive_divide.cc": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             },
             "Java: PrimitiveDivide.java": {
