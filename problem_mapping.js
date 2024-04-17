@@ -100,7 +100,7 @@ problem_mapping = {
         },
         "4.07 Compute pow(x,y)": {
             "C++: power_x_y.cc": {
-                "passed": 0,
+                "passed": 10002,
                 "total": 10002
             },
             "Java: PowerXY.java": {
