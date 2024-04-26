@@ -4,13 +4,23 @@
 #include "test_framework/generic_test.h"
 #include "test_framework/test_failure.h"
 #include "test_framework/timed_executor.h"
-using std::vector;
 
-void EvenOdd(vector<int>* A_ptr) {
-  // TODO - you fill in here.
-  return;
+void EvenOdd(std::vector<int>* A_ptr) {
+    std::vector<int>& result = *A_ptr;
+    int even_index = 0;
+    int odd_index = result.size() - 1;
+    while (even_index < odd_index) {
+        if (result[even_index] % 2 == 0) {
+            ++even_index;
+        }
+        else {
+            std::swap(result[even_index], result[odd_index]);
+            --odd_index;
+        }
+    }
 }
-void EvenOddWrapper(TimedExecutor& executor, vector<int> A) {
+
+void EvenOddWrapper(TimedExecutor& executor, std::vector<int> A) {
   std::multiset<int> before(begin(A), end(A));
 
   executor.Run([&] { EvenOdd(&A); });
