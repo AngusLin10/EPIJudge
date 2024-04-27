@@ -4,16 +4,30 @@
 #include "test_framework/generic_test.h"
 #include "test_framework/test_failure.h"
 #include "test_framework/timed_executor.h"
-using std::vector;
 enum class Color { kRed, kWhite, kBlue };
 
-void DutchFlagPartition(int pivot_index, vector<Color>* A_ptr) {
-  // TODO - you fill in here.
-  return;
+void DutchFlagPartition(int pivot_index, std::vector<Color>* A_ptr) {
+  std::vector<Color>& result = *A_ptr;
+  Color pivot = result[pivot_index];
+
+  int index = 0, left = 0, right = result.size() - 1;
+  while (index <= right) {
+      if (result[index] < pivot) {
+          std::swap(result[left], result[index]);
+          ++left;
+          ++index;
+      }
+      else if (result[index] > pivot) {
+          std::swap(result[index], result[right]);
+          --right;
+      }
+      else
+          ++index;
+  }
 }
-void DutchFlagPartitionWrapper(TimedExecutor& executor, const vector<int>& A,
+void DutchFlagPartitionWrapper(TimedExecutor& executor, const std::vector<int>& A,
                                int pivot_idx) {
-  vector<Color> colors;
+  std::vector<Color> colors;
   colors.resize(A.size());
   std::array<int, 3> count = {0, 0, 0};
   for (size_t i = 0; i < A.size(); i++) {
