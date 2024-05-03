@@ -2,9 +2,16 @@
 
 #include "test_framework/generic_test.h"
 using std::vector;
+// O(n)
 double BuyAndSellStockOnce(const vector<double>& prices) {
-  // TODO - you fill in here.
-  return 0.0;
+    double min_price = std::numeric_limits<double>::max();
+    double profit = 0.0;
+    for (int i = 0; i < prices.size(); ++i) {
+        min_price = std::min(min_price, prices[i]);
+        profit = std::max(profit, prices[i] - min_price);
+    }
+
+    return profit;
 }
 
 int main(int argc, char* argv[]) {
