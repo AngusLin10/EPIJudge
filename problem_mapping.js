@@ -410,7 +410,7 @@ problem_mapping = {
         },
         "5.17 The Sudoku checker problem": {
             "C++: is_valid_sudoku.cc": {
-                "passed": 0,
+                "passed": 745,
                 "total": 745
             },
             "Java: IsValidSudoku.java": {
