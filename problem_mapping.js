@@ -424,7 +424,7 @@ problem_mapping = {
         },
         "5.18 Compute the spiral ordering of a 2D array": {
             "C++: spiral_ordering.cc": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Java: SpiralOrdering.java": {
