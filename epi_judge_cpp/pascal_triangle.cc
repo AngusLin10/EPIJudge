@@ -2,6 +2,7 @@
 
 #include "test_framework/generic_test.h"
 using std::vector;
+// O(n^2)
 vector<vector<int>> GeneratePascalTriangle(int num_rows) {
     vector<vector<int>> result(num_rows, vector<int>());
     for (int i = 0; i < num_rows; ++i) {

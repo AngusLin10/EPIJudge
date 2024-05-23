@@ -2,6 +2,7 @@
 
 #include "test_framework/generic_test.h"
 using std::vector;
+// O(n^2)
 vector<int> MatrixInSpiralOrder(const vector<vector<int>>& square_matrix) {
     vector<int> result;
     if (square_matrix.size() == 0 || square_matrix[0].size() == 0) return result;
