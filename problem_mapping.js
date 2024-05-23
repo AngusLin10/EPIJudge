@@ -452,7 +452,7 @@ problem_mapping = {
         },
         "5.20 Compute rows in Pascal's Triangle": {
             "C++: pascal_triangle.cc": {
-                "passed": 0,
+                "passed": 35,
                 "total": 35
             },
             "Java: PascalTriangle.java": {

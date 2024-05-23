@@ -3,8 +3,14 @@
 #include "test_framework/generic_test.h"
 using std::vector;
 vector<vector<int>> GeneratePascalTriangle(int num_rows) {
-  // TODO - you fill in here.
-  return {};
+    vector<vector<int>> result(num_rows, vector<int>());
+    for (int i = 0; i < num_rows; ++i) {
+        result[i].resize(i + 1, 1);
+        for (int j = 1; j < i; ++j) {
+            result[i][j] = result[i - 1][j - 1] + result[i - 1][j];
+        }
+    }
+    return result;
 }
 
 int main(int argc, char* argv[]) {
