@@ -438,7 +438,7 @@ problem_mapping = {
         },
         "5.19 Rotate a 2D array": {
             "C++: matrix_rotation.cc": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Java: MatrixRotation.java": {

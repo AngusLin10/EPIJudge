@@ -3,8 +3,13 @@
 #include "test_framework/generic_test.h"
 using std::vector;
 void RotateMatrix(vector<vector<int>>* square_matrix_ptr) {
-  // TODO - you fill in here.
-  return;
+    vector<vector<int>>& result = *square_matrix_ptr;
+    for (int i = 0; i < result.size(); ++i) {
+        for (int j = i + 1; j < result[0].size(); ++j) {
+            std::swap(result[i][j], result[j][i]);
+        }
+        std::reverse(result[i].begin(), result[i].end());
+    }
 }
 vector<vector<int>> RotateMatrixWrapper(vector<vector<int>> square_matrix) {
   RotateMatrix(&square_matrix);
