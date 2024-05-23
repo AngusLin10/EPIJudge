@@ -2,6 +2,7 @@
 
 #include "test_framework/generic_test.h"
 using std::vector;
+// O(n^2)
 void RotateMatrix(vector<vector<int>>* square_matrix_ptr) {
     vector<vector<int>>& result = *square_matrix_ptr;
     for (int i = 0; i < result.size(); ++i) {
