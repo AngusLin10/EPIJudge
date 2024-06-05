@@ -552,7 +552,7 @@ problem_mapping = {
         },
         "6.06 Reverse all the words in a sentence": {
             "C++: reverse_words.cc": {
-                "passed": 0,
+                "passed": 103,
                 "total": 103
             },
             "Java: ReverseWords.java": {

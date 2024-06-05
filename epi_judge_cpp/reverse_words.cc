@@ -4,10 +4,19 @@
 #include "test_framework/timed_executor.h"
 using std::string;
 
+// O(n)
 void ReverseWords(string* s) {
-  // TODO - you fill in here.
-  return;
+    std::reverse(s->begin(), s->end());
+    int end = 0;
+    for (int start = 0; start < s->size(); start = end + 1) {
+        for (end = start; end < s->size(); ++end) {
+            if ((*s)[end] == ' ')
+                break;
+        }
+        reverse(s->begin() + start, s->begin() + end);
+    }
 }
+
 string ReverseWordsWrapper(TimedExecutor& executor, string s) {
   string s_copy = s;
 
