@@ -594,7 +594,7 @@ problem_mapping = {
         },
         "6.09 Compute all valid IP addresses": {
             "C++: valid_ip_addresses.cc": {
-                "passed": 0,
+                "passed": 10008,
                 "total": 10008
             },
             "Java: ValidIpAddresses.java": {
