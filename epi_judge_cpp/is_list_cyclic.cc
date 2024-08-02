@@ -6,12 +6,26 @@
 #include "test_framework/timed_executor.h"
 using std::shared_ptr;
 
-shared_ptr<ListNode<int>> HasCycle(const shared_ptr<ListNode<int>>& head) {
-  // TODO - you fill in here.
+shared_ptr<ListNode<int>> HasCycle(const shared_ptr<ListNode<int>> &head)
+{
+  shared_ptr<ListNode<int>> slow = head, fast = head;
+  while (fast && fast->next) {
+    slow = slow->next;
+    fast = fast->next->next;
+    if (slow == fast) {
+      slow = head;
+      while (slow != fast) {
+        fast = fast->next;
+        slow = slow->next;
+      }
+      return slow;
+    }
+  }
   return nullptr;
 }
-void HasCycleWrapper(TimedExecutor& executor,
-                     const shared_ptr<ListNode<int>>& head, int cycle_idx) {
+void HasCycleWrapper(TimedExecutor &executor,
+                     const shared_ptr<ListNode<int>> &head, int cycle_idx)
+{
   int cycle_length = 0;
   if (cycle_idx != -1) {
     if (!head) {
@@ -65,7 +79,8 @@ void HasCycleWrapper(TimedExecutor& executor,
   }
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[])
+{
   std::vector<std::string> args{argv + 1, argv + argc};
   std::vector<std::string> param_names{"executor", "head", "cycle_idx"};
   return GenericTestMain(args, "is_list_cyclic.cc", "is_list_cyclic.tsv",
