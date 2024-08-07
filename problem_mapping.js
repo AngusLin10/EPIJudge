@@ -760,7 +760,7 @@ problem_mapping = {
         },
         "7.06 Delete a node from a singly linked list": {
             "C++: delete_node_from_list.cc": {
-                "passed": 0,
+                "passed": 512,
                 "total": 512
             },
             "Java: DeleteNodeFromList.java": {
@@ -774,7 +774,7 @@ problem_mapping = {
         },
         "7.07 Remove the kth last element from a list": {
             "C++: delete_kth_last_from_list.cc": {
-                "passed": 0,
+                "passed": 306,
                 "total": 306
             },
             "Java: DeleteKthLastFromList.java": {
