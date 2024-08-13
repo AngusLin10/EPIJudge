@@ -802,7 +802,7 @@ problem_mapping = {
         },
         "7.09 Implement cyclic right shift for singly linked lists": {
             "C++: list_cyclic_right_shift.cc": {
-                "passed": 0,
+                "passed": 507,
                 "total": 507
             },
             "Java: ListCyclicRightShift.java": {
