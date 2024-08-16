@@ -830,7 +830,7 @@ problem_mapping = {
         },
         "7.11 Test whether a singly linked list is palindromic": {
             "C++: is_list_palindromic.cc": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             },
             "Java: IsListPalindromic.java": {
