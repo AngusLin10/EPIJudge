@@ -8,21 +8,24 @@ using std::length_error;
 class Stack {
  public:
   bool Empty() const {
-    // TODO - you fill in here.
-    return true;
+      return stacks.empty();
   }
   int Max() const {
-    // TODO - you fill in here.
-    return 0;
+      return stacks.top().second;
   }
   int Pop() {
-    // TODO - you fill in here.
-    return 0;
+      int value = stacks.top().first;
+      stacks.pop();
+      return value;
   }
   void Push(int x) {
-    // TODO - you fill in here.
-    return;
+      if (stacks.empty())
+          stacks.emplace(std::make_pair(x, x));
+      else
+        stacks.emplace(std::make_pair(x, std::max(x, stacks.top().second)));
   }
+private:
+    std::stack<std::pair<int, int>> stacks;
 };
 struct StackOp {
   std::string op;
