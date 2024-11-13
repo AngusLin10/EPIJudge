@@ -7,17 +7,21 @@ using std::length_error;
 
 class Stack {
  public:
+  // O(1)
   bool Empty() const {
       return stacks.empty();
   }
+  // O(1)
   int Max() const {
       return stacks.top().second;
   }
+  // O(1)
   int Pop() {
       int value = stacks.top().first;
       stacks.pop();
       return value;
   }
+  // O(1)
   void Push(int x) {
       if (stacks.empty())
           stacks.emplace(std::make_pair(x, x));
