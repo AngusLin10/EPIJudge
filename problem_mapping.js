@@ -902,7 +902,7 @@ problem_mapping = {
         },
         "8.03 Is a string well-formed?": {
             "C++: is_valid_parenthesization.cc": {
-                "passed": 0,
+                "passed": 78,
                 "total": 78
             },
             "Java: IsValidParenthesization.java": {
