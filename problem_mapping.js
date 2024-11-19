@@ -916,7 +916,7 @@ problem_mapping = {
         },
         "8.04 Normalize pathnames": {
             "C++: directory_path_normalization.cc": {
-                "passed": 0,
+                "passed": 1,
                 "total": 255
             },
             "Java: DirectoryPathNormalization.java": {
@@ -930,7 +930,7 @@ problem_mapping = {
         },
         "8.05 Compute buildings with a sunset view": {
             "C++: sunset_view.cc": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Java: SunsetView.java": {
