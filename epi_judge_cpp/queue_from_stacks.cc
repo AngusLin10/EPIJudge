@@ -9,14 +9,24 @@ using std::length_error;
 class Queue {
  public:
   void Enqueue(int x) {
-    // TODO - you fill in here.
-    return;
+      inQueue.emplace(x);
   }
   int Dequeue() {
-    // TODO - you fill in here.
-    return 0;
+      if (outQueue.empty()) {
+          while (!inQueue.empty()) {
+              outQueue.emplace(inQueue.top());
+              inQueue.pop();
+          }
+      }
+
+      int ans = outQueue.top();
+      outQueue.pop();
+      return ans;
   }
+private:
+    std::stack<int> inQueue, outQueue;
 };
+
 struct QueueOp {
   enum class Operation { kConstruct, kDequeue, kEnqueue } op;
   int argument;
